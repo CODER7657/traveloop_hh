@@ -3,7 +3,9 @@
  * Zero changes required in UI components.
  */
 
-const API_BASE = '/api';
+const API_BASE = import.meta.env.VITE_API_URL 
+  ? `${import.meta.env.VITE_API_URL}/api` 
+  : '/api';
 
 // Store auth state change listeners so login/signup can trigger them
 let _authListeners = [];
